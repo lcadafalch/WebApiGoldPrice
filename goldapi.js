@@ -27,14 +27,17 @@ function procesaResultado(texto) {
 
 
 
-// TODO sacar datos de dia, mes y año
-// crear una string de fecha
+    // TODO sacar datos de dia, mes y año
+    // crear una string de fecha
+    document.querySelectorAll("#diaFecha")
+    document.querySelector("#mesFecha")
+    document.querySelector("#anoFecha")
 
 
 
     let valorOro = buscaValorOroUsuario(arrFechas, fechaUsuario); // busca valor oro
-    
-    
+
+
     // imprime valor oro
     let resultadoValor = document.querySelectorAll(".resultadoValor")[0]
     resultadoValor.innerHTML = valorOro;
@@ -46,7 +49,7 @@ function procesaResultado(texto) {
     console.log(valorOro);
 }
 
- function buscaValorOroFecha(arrFechas,fechaUsuario) {
+function buscaValorOroFecha(arrFechas, fechaUsuario) {
     for (let i = 0; i < arrFechas.length; i++) {
 
         let fecha = arrFechas[i][0];
@@ -56,22 +59,22 @@ function procesaResultado(texto) {
         }
     }
     return 0;
- }
+}
 
 
 function buscaValorOroUsuario(arrFechas, fechaUsuario) { // función de buscar el valor del oro 
 
-    let valordelOro = buscaValorOroFecha(arrFechas,fechaUsuario)
- 
-/*
-//TODO: cambiar fechaUsuario (añadir o quitar dias)
-var fecha = new Date(fechaUsuario);
-var dias = 2; // Número de días a agregar
-fecha.setDate(fecha.getDate() + dias);
+    let valordelOro = buscaValorOroFecha(arrFechas, fechaUsuario)
 
-console.log(fecha)
-let valordelOro = buscaValorOroFecha(arrFechas,fecha)
-*/
+    /*
+    //TODO: cambiar fechaUsuario (añadir o quitar dias)
+    var fecha = new Date(fechaUsuario);
+    var dias = 2; // Número de días a agregar
+    fecha.setDate(fecha.getDate() + dias);
+    
+    console.log(fecha)
+    let valordelOro = buscaValorOroFecha(arrFechas,fecha)
+    */
 
 
 
