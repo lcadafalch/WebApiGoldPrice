@@ -10,23 +10,42 @@ function httpGet(theUrl, callback) {
             callback(xmlHttp.responseText);
     }
     xmlHttp.open("GET", theUrl);
-     xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest")
+    xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest")
     xmlHttp.send();
 
-} 
-function imprime (texto){
- //   console.log("retorno")
- let datos = JSON.parse(texto);
-
- function fechas (datos){
- datos.dataset
-
-
- }
-
-    
 }
- httpGet("https://www.quandl.com/api/v3/datasets/WGC/GOLD_DAILY_EUR.json?api_key=QM8Dtv2xn3-dKZJ6rhoq",imprime)
+function procesaResultado(texto) {
+    //   console.log("retorno")
+    let datos = JSON.parse(texto);
+    let arrFechas = datos.dataset.data
+    let fechaUsuario = "1995-03-05";
+    let valorOro = buscaValorOroFecha(arrFechas, fechaUsuario);
+
+
+
+    console.log(valorOro);
+}
+
+
+function buscaValorOroFecha(arrFechas, fechaUsuario) { // función de buscar el valor del oro 
+
+    for (let i = 0; i < arrFechas.length; i++) {
+
+        let fecha = arrFechas[i][0];
+        let valordelOro = arrFechas[i][1];
+        if (fecha == fechaUsuario) {
+           return valordelOro; 
+        }
+    }
+    return 0;
+}
+    
+
+// BINDS / EVENT LISTENERS
+
+
+///EJECUCION
+httpGet("https://www.quandl.com/api/v3/datasets/WGC/GOLD_DAILY_EUR.json?api_key=QM8Dtv2xn3-dKZJ6rhoq", procesaResultado)
 
 
 
@@ -45,26 +64,3 @@ function imprime (texto){
 
 
 
-
-
-
-
-
-
-
-
-
-
-// function imprimeCliente(objCliente) {
-//     document.write(objCliente.name)
-// }
-// function listaClientes(objClientes) {
-//     for (let i = 0; i < objClientes.firstClients.length; i++) {
-//         imprimeCliente(objClientes.firstClients[i])
-//     }
-// }
-// function imprime(texto) {
-//     callback
-//     let objClientes = JSON.parse(texto); listaClientes(objClientes)
-// } function imprime(texto) { //callback
-//     console.log(texto)
