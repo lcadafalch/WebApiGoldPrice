@@ -23,15 +23,21 @@ function procesaResultado(texto) {
 
 
 
-    let fechaUsuario = "1995-03-20"; // fecha del usuario
+    //let fechaUsuario = "1984-03-21"; // fecha del usuario
 
 
 
     // TODO sacar datos de dia, mes y año
     // crear una string de fecha
-    document.querySelectorAll("#diaFecha")
-    document.querySelector("#mesFecha")
-    document.querySelector("#anoFecha")
+
+    let diafecha = document.querySelectorAll("#diaFecha");
+    let mesfecha = document.querySelectorAll("#mesFecha");
+    let anofecha = document.querySelectorAll("#anoFecha");
+
+  let  fechaUsuario =  (anofecha + "-" +  mesfecha + "-" + diafecha);
+
+    
+   
 
 
 
