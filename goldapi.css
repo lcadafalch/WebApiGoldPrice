@@ -5,8 +5,7 @@ body{
     color:black;
      font-family: Lato;
 }
-h1, h2 , h3{
-}
+
 hr{
     visibility: hidden;
 }
@@ -14,4 +13,7 @@ hr{
 .cartaSuperior{
    background-color: rgb(236, 236, 129);
     
+}
+.parteinferior{
+    background-color:rgb(212, 221, 212);
 }

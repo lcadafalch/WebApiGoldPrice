@@ -23,37 +23,34 @@ function procesaResultado(texto) {
 
 
 
-    //let fechaUsuario = "1984-03-21"; // fecha del usuario
+    let fechaUsuario = "1984-03-21"; // fecha del usuario
 
 
 
     // TODO sacar datos de dia, mes y año
     // crear una string de fecha
 
-    let diafecha = document.querySelectorAll("#diaFecha");
-    let mesfecha = document.querySelectorAll("#mesFecha");
-    let anofecha = document.querySelectorAll("#anoFecha");
+//     let diafecha = document.querySelectorAll("#diaFecha");
+//     let mesfecha = document.querySelectorAll("#mesFecha");
+//     let anofecha = document.querySelectorAll("#anoFecha");
 
-  let  fechaUsuario =  (anofecha + "-" +  mesfecha + "-" + diafecha);
-
-    
-   
-
-
+//   let  fechaUsuario =  (anofecha + "-" +  mesfecha + "-" + diafecha);
 
     let valorOro = buscaValorOroUsuario(arrFechas, fechaUsuario); // busca valor oro
-
 
     // imprime valor oro
     let resultadoValor = document.querySelectorAll(".resultadoValor")[0]
     resultadoValor.innerHTML = valorOro;
-
-
-
-
+    
+ 
+   
 
     console.log(valorOro);
 }
+
+// let resultadoBeneficio = document.querySelectorAll("resultadoBeneficio")[0]
+// resultadoBeneficio.innerHTML = valorOro;
+
 
 function buscaValorOroFecha(arrFechas, fechaUsuario) {
     for (let i = 0; i < arrFechas.length; i++) {
@@ -86,6 +83,8 @@ function buscaValorOroUsuario(arrFechas, fechaUsuario) { // función de buscar e
 
     return valordelOro;
 }
+
+ 
 
 
 // BINDS / EVENT LISTENERS
