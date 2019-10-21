@@ -97,3 +97,4 @@ butonValor.addEventListener("click", function () {
 ///EJECUCION
 
 
+//TO DO precio del oro interactivo con librería  D3 , highcharts , chart.js , plotly
