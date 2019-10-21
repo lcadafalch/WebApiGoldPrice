@@ -23,33 +23,27 @@ function procesaResultado(texto) {
 
 
 
-    let fechaUsuario = "1984-03-21"; // fecha del usuario
-
+    let fechaUsuario = (document.querySelectorAll('.fechaUsuario')[0].value); // fecha del usuario
+    // document.querySelector('.fechaUsuario').addEventListener('click', ()=>{
+    //     console.log('click')
+    // })
 
 
     // TODO sacar datos de dia, mes y año
-    // crear una string de fecha
 
-//     let diafecha = document.querySelectorAll("#diaFecha");
-//     let mesfecha = document.querySelectorAll("#mesFecha");
-//     let anofecha = document.querySelectorAll("#anoFecha");
 
-//   let  fechaUsuario =  (anofecha + "-" +  mesfecha + "-" + diafecha);
+    console.log(fechaUsuario);
 
     let valorOro = buscaValorOroUsuario(arrFechas, fechaUsuario); // busca valor oro
 
     // imprime valor oro
     let resultadoValor = document.querySelectorAll(".resultadoValor")[0]
-    resultadoValor.innerHTML = valorOro;
-    
- 
-   
+    resultadoValor.innerHTML = valorOro + "€";
 
     console.log(valorOro);
 }
 
-// let resultadoBeneficio = document.querySelectorAll("resultadoBeneficio")[0]
-// resultadoBeneficio.innerHTML = valorOro;
+  
 
 
 function buscaValorOroFecha(arrFechas, fechaUsuario) {
@@ -69,22 +63,22 @@ function buscaValorOroUsuario(arrFechas, fechaUsuario) { // función de buscar e
 
     let valordelOro = buscaValorOroFecha(arrFechas, fechaUsuario)
 
-    /*
+
     //TODO: cambiar fechaUsuario (añadir o quitar dias)
-    var fecha = new Date(fechaUsuario);
-    var dias = 2; // Número de días a agregar
-    fecha.setDate(fecha.getDate() + dias);
-    
-    console.log(fecha)
-    let valordelOro = buscaValorOroFecha(arrFechas,fecha)
-    */
+    // var fecha = new Date(fechaUsuario);
+    // var dias = 2; // Número de días a agregar
+    // fecha.setDate(fecha.getDate() + dias);
+
+    // console.log(fecha)
+    // let valordelOro = buscaValorOroFecha(arrFechas,fecha)
+
 
 
 
     return valordelOro;
 }
 
- 
+
 
 
 // BINDS / EVENT LISTENERS
@@ -92,7 +86,7 @@ function buscaValorOroUsuario(arrFechas, fechaUsuario) { // función de buscar e
 
 let butonValor = document.getElementById("butonValor")
 butonValor.addEventListener("click", function () {
-
+    console.log(document.querySelectorAll('.fechaUsuario')[0].value)
     httpGet("https://www.quandl.com/api/v3/datasets/WGC/GOLD_DAILY_EUR.json?api_key=QM8Dtv2xn3-dKZJ6rhoq", procesaResultado)
 
 
